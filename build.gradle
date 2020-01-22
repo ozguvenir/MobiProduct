@@ -12,6 +12,13 @@ buildscript {
     ext.glide_version = '4.10.0'
     ext.cardview_version = '1.0.0'
     ext.photoview_version = '2.3.0'
+    ext.espresso_version = '3.2.0'
+    ext.testcore_version = '1.1.0'
+    ext.androidx_core_test_version = '2.1.0'
+    ext.androidx_test_version = '1.2.0'
+    ext.androidx_junit_version = '1.1.1'
+    ext.mockito_version = '2.28.2'
+    ext.junit_version = '4.12'
 
     repositories {
         google()

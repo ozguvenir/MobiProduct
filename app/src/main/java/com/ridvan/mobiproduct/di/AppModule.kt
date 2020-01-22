@@ -28,7 +28,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    internal fun provideMyAppService(retrofit: Retrofit): MobiProductService {
+    internal fun provideMobiProductService(retrofit: Retrofit): MobiProductService {
         return retrofit.create(MobiProductService::class.java)
     }
 
