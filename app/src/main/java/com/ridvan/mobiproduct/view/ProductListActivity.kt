@@ -1,7 +1,8 @@
-package com.ridvan.mobiproduct
+package com.ridvan.mobiproduct.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ridvan.mobiproduct.R
 
 class ProductListActivity : AppCompatActivity() {
 
