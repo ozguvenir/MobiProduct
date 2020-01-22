@@ -24,6 +24,7 @@ import org.junit.runner.RunWith
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 
+
 /**
  * Instrumented test, which will execute on an Android device.
  *
@@ -44,12 +45,6 @@ class ProductListActivityTest {
     }
 
     @Test
-    fun testProgressBarDisplay() {
-        Espresso.onView(ViewMatchers.withId(R.id.progress_bar))
-            .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
-    }
-
-    @Test
     fun testRecyclerViewPerform() {
         val coordinatorLayout = Espresso.onView(
             Matchers.allOf(
@@ -66,47 +61,8 @@ class ProductListActivityTest {
                 ViewMatchers.isDisplayed()
             )
         )
-        SystemClock.sleep(2000) //Idling resources can be used.
+        SystemClock.sleep(2000)
         coordinatorLayout.perform(ViewActions.click())
-    }
-
-    @Test
-    fun testItemList() {
-        val intent =
-            Intent(
-                InstrumentationRegistry.getInstrumentation().targetContext,
-                ProductListActivityTest::class.java
-            )
-        val activity = InstrumentationRegistry.getInstrumentation().startActivitySync(intent.apply {
-            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        })
-
-        MatcherAssert.assertThat(activity.recycler_view.adapter, CoreMatchers.notNullValue())
-        waitForAdapterChange(activity.recycler_view)
-        MatcherAssert.assertThat(activity.recycler_view.adapter!!.itemCount, CoreMatchers.`is`(30))
-    }
-
-    @Test
-    fun testItemSelect() {
-        val intent =
-            Intent(
-                InstrumentationRegistry.getInstrumentation().targetContext,
-                ProductListActivityTest::class.java
-            )
-        val activity = InstrumentationRegistry.getInstrumentation().startActivitySync(intent.apply {
-            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        })
-
-        waitForAdapterChange(activity.recycler_view)
-
-        Espresso.onView(ViewMatchers.withId(R.id.recycler_view)).perform(
-            RecyclerViewActions.actionOnItemAtPosition<ProductListAdapter.ProductViewHolder>(
-                3,
-                ViewActions.click()
-            )
-        )
-        Espresso.onView(ViewMatchers.withId(R.id.fullSizeImage))
-            .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
     }
 
     @Test

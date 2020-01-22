@@ -33,7 +33,6 @@ class ProductListActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_product_list)
         productListViewModel = ViewModelProviders.of(this).get(ProductListViewModel::class.java)
-        binding.viewModel = productListViewModel
         binding.lifecycleOwner = this
 
         this.setRecyclerViewAdapter()
