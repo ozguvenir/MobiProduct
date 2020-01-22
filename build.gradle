@@ -9,6 +9,9 @@ buildscript {
     ext.okhttp_version = '3.8.0'
     ext.dagger_version = '2.24'
     ext.material_version = "1.0.0"
+    ext.glide_version = '4.10.0'
+    ext.cardview_version = '1.0.0'
+    ext.photoview_version = '2.3.0'
 
     repositories {
         google()
@@ -27,7 +30,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-
+        maven { url "https://jitpack.io" } //photo view
     }
 }
 

@@ -50,4 +50,11 @@ dependencies {
     implementation "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     implementation "com.google.android.material:material:$material_version"
+    // CardView
+    implementation "androidx.cardview:cardview:$cardview_version"
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    // PhotoView
+    implementation "com.github.chrisbanes:PhotoView:$photoview_version"
+
 }
