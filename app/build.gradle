@@ -40,4 +40,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     // RecyclerView
     implementation "androidx.recyclerview:recyclerview:$androidx_version"
+    // Retrofit2 and OkHttp3
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
 }
